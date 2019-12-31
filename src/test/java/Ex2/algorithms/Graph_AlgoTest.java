@@ -16,7 +16,7 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
-class Graph_AlgoTest {
+class mGraph_AlgoTest {
 
 	Graph_Algo a = new Graph_Algo();
 	@BeforeEach

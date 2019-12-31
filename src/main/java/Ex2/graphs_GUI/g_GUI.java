@@ -1,30 +1,21 @@
 package Ex2.graphs_GUI;
-import Ex2.algorithms.*;
-import Ex2.dataStructure.*;
+
+import Ex2.algorithms.Graph_Algo;
+import Ex2.dataStructure.edge_data;
+import Ex2.dataStructure.graph;
+import Ex2.dataStructure.node_data;
 import Ex2.utils.Point3D;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Menu;
-import java.awt.MenuBar;
-import java.awt.MenuItem;
-import java.awt.Stroke;
+import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
-
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.filechooser.FileSystemView;
 
 public class g_GUI extends JFrame implements ActionListener  {
 

@@ -47,15 +47,20 @@ public class DGraph implements graph,Serializable{
 	@Override
 	public void addNode(node_data n) {
 		MC++;
-		if(!vertexs.containsKey(n.getKey()))
-		{
 			vertexs.put(n.getKey(), n);
 			edgesPerVertex.put(n, new Hashtable<Integer, edge_data>());
-		}
 	}
 
 	@Override
 	public void connect(int src, int dest, double w) {
+		if(src == dest)
+		{
+			return;
+		}
+		if(w < 0 )
+		{
+			throw new RuntimeException( "Weight cant be negative" );
+		}
 		MC++;
 		node_data vert = vertexs.get(src);
 		edgesPerVertex.get(vert).put(dest, new edges(src, dest, w));
@@ -95,7 +100,12 @@ public class DGraph implements graph,Serializable{
 	public edge_data removeEdge(int src, int dest) {
 		MC++;
 		node_data vert = vertexs.get(src);
-		return edgesPerVertex.get(vert).remove(dest);
+		edge_data ans =  edgesPerVertex.get(vert).remove(dest);
+		if(ans!= null){
+			countEdges--;
+			MC++;
+		}
+		return ans;
 	}
 
 	@Override
